@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <div class="body">
+        <h1 id='test'>Test gallery</h1>
+        <p>Для тестирования галереи нажмите кнопку ниже</p>
+        <button id='button'>Начнем</button>
+    </div>
+    <div class="gallery-wrap">
+        <div class="gallery">
+            <div class="exit" data-button="button">
+                <img src="img/clear.png" alt="">
+            </div>
+            <div class="gallery-body">
+                <span id="left">
+                    <img src="img/arrow_left.png" alt="">
+                </span>
+                <div class="big-img">
+                    <img src="img/img1.jpg" data-src="img/img1.jpg" alt="" id="img-review">
+                </div>
+                <span id="right">
+                    <img src="img/arrow_right.png" alt="">
+                </span>
+            </div>
+            <div class="gallery-mini"></div>
+        </div>
+    </div>
+    <script src="gallery.js"></script>
+</body>
+</html>

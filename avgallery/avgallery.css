@@ -76,30 +76,54 @@
 }
 
 .gallery-mini {
+    flex: 1;
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
-    justify-content: center;
-}
-.img-mini-box {
-    margin: 5px;
-    width: 100px;
-    height: 133.3px;
-    background-color: royalblue;
-    text-align: center;
-    flex-shrink: 0;
+    overflow: hidden;
+    justify-content: start;
+    min-width: 100%;
+    min-height: 133.3px;
+    position: absolute;
+    z-index: -1;
 }
 
-.gallery-mini img {
+.gallery-box {
+    position: relative;
+}
+.img-mini-box {
+    margin: 2px;
     width: 100px;
     height: 133.3px;
+    text-align: center;
+    flex-shrink: 0;
+    object-fit: cover;
+    flex: 0 0 auto;
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    background-position: center;
 }
+
+#button-left, #button-right {
+    position: absolute;
+    top: 18px;
+}
+
+
+#button-right {
+    left: 95%;
+}
+
+#button-left {
+    left: 0;
+}
+
+
 
 @media screen and (max-width: 1200px) {
     .gallery-mini {
         justify-content: start;
         overflow-x: auto;
-        flex-wrap: wrap;
     }
 }
 

@@ -42,8 +42,6 @@ const load = () => {
         images.push(i.src || i.href);
     }
 
-    // avgallery.__create_gallery(images);
-
     for (let i of data_avgallery) {
         i.addEventListener('click', (e) => {
             setTimeout(() => {
@@ -126,9 +124,9 @@ const listeners = (e) => {
         setTimeout(() => {
             for (let i of img_mini) {
                 if (img.dataset.src == i.dataset.source) {
-                    i.style.backgroundSize = 'cover'
+                    i.style.outline = '3px solid #00DA78'
                 } else {
-                    i.style.backgroundSize = 'auto 90%'
+                    i.style.outline = 'none'
                 }
             }
         }, 501)
@@ -159,8 +157,6 @@ const listeners = (e) => {
         i.addEventListener('click', (e) => {
             setTimeout(() => {
                 img.style.opacity = '0';
-                i.style.backgroundSize = 'cover'
-                e.target.style.marginTop = '2px';
             }, 50)
             setTimeout(() => {
                 img.src = e.target.dataset.source;
@@ -169,14 +165,14 @@ const listeners = (e) => {
             }, 500)
         });
         i.addEventListener('mouseover', () => {
-            i.style.backgroundSize = 'cover'
             i.style.transition = '0.2s';
+            i.style.outline = '3px solid #00DA78'
         })
 
         i.addEventListener('mouseout', () => {
             if (img.dataset.src != i.dataset.source) {
-                i.style.backgroundSize = 'auto 90%'
                 i.style.transition = '0.2s';
+                i.style.outline = 'none'
             }
         })
     }

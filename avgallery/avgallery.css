@@ -96,9 +96,10 @@
     height: 133.3px;
     text-align: center;
     flex-shrink: 0;
-    object-fit: cover;
+    box-sizing: border-box;
     flex: 0 0 auto;
-    background-size: auto 90%;
+    margin: 5px;
+    background-size: cover;
     background-repeat: no-repeat;
     transition: 0.2s;
     background-position: center;
@@ -110,8 +111,9 @@
 }
 
 
+
 #button-right {
-    left: 95%;
+    margin-left: 95%;
 }
 
 #button-left {
@@ -119,11 +121,22 @@
 }
 
 
+@media screen and (max-width: 900px) {
+    .big-img img {
+        width: 300px;
+        height: 450px;
+        transition: 0.5s;
+        object-fit: cover;
+        margin-top: 0px;
+    }
 
-@media screen and (max-width: 1200px) {
-    .gallery-mini {
-        justify-content: start;
-        overflow-x: auto;
+    #left, #right {
+        height: 50%;
+        width: 10%;
+    }
+
+    #left img, #right img {
+        margin-top: 200px;
     }
 }
 
@@ -175,6 +188,10 @@
 
     .gallery-body {
         padding: 0;
+    }
+
+    #button-left, #button-right {
+        display: none;
     }
 
     
